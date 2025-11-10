@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with libnbt++.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "endian_str.h"
+#include "libnbt++/endian_str.h"
 #include <climits>
 #include <cstring>
 #include <iostream>

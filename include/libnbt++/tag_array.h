@@ -20,9 +20,9 @@
 #ifndef TAG_ARRAY_H_INCLUDED
 #define TAG_ARRAY_H_INCLUDED
 
-#include "crtp_tag.h"
-#include "io/stream_reader.h"
-#include "io/stream_writer.h"
+#include "libnbt++/crtp_tag.h"
+#include "libnbt++/io/stream_reader.h"
+#include "libnbt++/io/stream_writer.h"
 #include <type_traits>
 #include <vector>
 #include <istream>

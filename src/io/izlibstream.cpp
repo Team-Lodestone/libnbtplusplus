@@ -17,8 +17,8 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with libnbt++.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "io/izlibstream.h"
-#include "io/zlib_streambuf.h"
+#include "libnbt++/io/izlibstream.h"
+#include "libnbt++/io/zlib_streambuf.h"
 
 namespace zlib
 {

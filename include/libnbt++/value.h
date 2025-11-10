@@ -20,7 +20,7 @@
 #ifndef TAG_REF_PROXY_H_INCLUDED
 #define TAG_REF_PROXY_H_INCLUDED
 
-#include "tag.h"
+#include "libnbt++/tag.h"
 #include <string>
 #include <type_traits>
 

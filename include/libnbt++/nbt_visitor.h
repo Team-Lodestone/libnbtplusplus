@@ -20,7 +20,7 @@
 #ifndef NBT_VISITOR_H_INCLUDED
 #define NBT_VISITOR_H_INCLUDED
 
-#include "tagfwd.h"
+#include "libnbt++/tagfwd.h"
 
 namespace nbt
 {

@@ -20,7 +20,7 @@
 #ifndef VALUE_INITIALIZER_H_INCLUDED
 #define VALUE_INITIALIZER_H_INCLUDED
 
-#include "value.h"
+#include "libnbt++/value.h"
 
 namespace nbt
 {

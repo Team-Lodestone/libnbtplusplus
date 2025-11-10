@@ -20,8 +20,8 @@
 #ifndef TAG_COMPOUND_H_INCLUDED
 #define TAG_COMPOUND_H_INCLUDED
 
-#include "crtp_tag.h"
-#include "value_initializer.h"
+#include "libnbt++/crtp_tag.h"
+#include "libnbt++/value_initializer.h"
 #include <map>
 #include <string>
 

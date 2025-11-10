@@ -23,7 +23,7 @@
 #include <cstdint>
 #include <iosfwd>
 #include <memory>
-#include "nbt_export.h"
+#include "libnbt++/nbt_export.h"
 
 namespace nbt
 {

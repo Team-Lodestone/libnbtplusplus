@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 project(libnbt++
-    VERSION 2.3)
+    VERSION 2.3.1)
 
 # supported configure options
 option(NBT_BUILD_SHARED "Build shared libraries" OFF)
@@ -43,7 +43,11 @@ if(NBT_USE_ZLIB)
 endif()
 
 add_library(${NBT_NAME} ${NBT_SOURCES})
-target_include_directories(${NBT_NAME} PUBLIC include ${CMAKE_CURRENT_BINARY_DIR})
+target_include_directories(${NBT_NAME} PUBLIC
+        PUBLIC
+            $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+            ${CMAKE_CURRENT_BINARY_DIR}
+)
 
 # Install it
 if(DEFINED NBT_DEST_DIR)
@@ -59,7 +63,7 @@ if(NBT_USE_ZLIB)
     target_link_libraries(${NBT_NAME} ZLIB::ZLIB)
 endif()
 set_property(TARGET ${NBT_NAME} PROPERTY CXX_STANDARD 11)
-generate_export_header(${NBT_NAME} BASE_NAME nbt)
+generate_export_header(${NBT_NAME} BASE_NAME nbt EXPORT_FILE_NAME libnbt++/nbt_export.h)
 
 if(${BUILD_SHARED_LIBS})
     set_target_properties(${NBT_NAME} PROPERTIES

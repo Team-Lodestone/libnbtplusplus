@@ -17,9 +17,9 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with libnbt++.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "text/json_formatter.h"
-#include "nbt_tags.h"
-#include "nbt_visitor.h"
+#include "libnbt++/text/json_formatter.h"
+#include "libnbt++/nbt_tags.h"
+#include "libnbt++/nbt_visitor.h"
 #include <cmath>
 #include <iomanip>
 #include <limits>

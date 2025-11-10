@@ -17,9 +17,9 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with libnbt++.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "tag_compound.h"
-#include "io/stream_reader.h"
-#include "io/stream_writer.h"
+#include "libnbt++/tag_compound.h"
+#include "libnbt++/io/stream_reader.h"
+#include "libnbt++/io/stream_writer.h"
 #include <istream>
 #include <sstream>
 

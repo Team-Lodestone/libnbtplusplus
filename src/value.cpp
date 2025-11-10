@@ -17,8 +17,8 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with libnbt++.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "value.h"
-#include "nbt_tags.h"
+#include "libnbt++/value.h"
+#include "libnbt++/nbt_tags.h"
 #include <typeinfo>
 
 namespace nbt

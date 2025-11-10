@@ -22,7 +22,7 @@
 
 #include <cstdint>
 #include <iosfwd>
-#include "nbt_export.h"
+#include "libnbt++/nbt_export.h"
 
 /**
  * @brief Reading and writing numbers from and to streams
