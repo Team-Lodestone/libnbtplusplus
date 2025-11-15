@@ -101,6 +101,11 @@ public:
     template<class T>
     const T& as() const;
 
+    template<class T>
+    T& getAs();
+    template<class T>
+    const T& getAs() const;
+
     //Assignment of primitives and string
     /**
      * @brief Assigns the given value to the tag if the type is compatible
@@ -214,6 +219,18 @@ template<class T>
 const T& value::as() const
 {
     return tag_->as<T>();
+}
+
+template<class T>
+T& value::getAs()
+{
+    return tag_.get()->as<T>();
+}
+
+template<class T>
+const T& value::getAs() const
+{
+    return tag_.get()->as<T>();
 }
 
 }
