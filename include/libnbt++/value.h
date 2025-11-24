@@ -127,12 +127,12 @@ public:
      * @throw std::bad_cast if the tag type is not convertible to the desired
      * type via a widening conversion
      */
-    operator int8_t() const;
-    operator int16_t() const;
-    operator int32_t() const;
-    operator int64_t() const;
-    operator float() const;
-    operator double() const;
+    explicit operator int8_t() const;
+    explicit operator int16_t() const;
+    explicit operator int32_t() const;
+    explicit operator int64_t() const;
+    explicit operator float() const;
+    explicit operator double() const;
 
     /**
      * @brief Returns the contained string if the type is tag_string
