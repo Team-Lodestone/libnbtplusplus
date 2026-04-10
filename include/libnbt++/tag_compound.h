@@ -23,6 +23,7 @@
 #include "libnbt++/crtp_tag.h"
 #include "libnbt++/value_initializer.h"
 #include <map>
+#include <optional>
 #include <string>
 
 namespace nbt
@@ -56,6 +57,14 @@ public:
      */
     value& at(const std::string& key);
     const value& at(const std::string& key) const;
+
+    /**
+     * @brief Accesses a tag by key with bounds checking
+     *
+     * Returns an std::optional containing the specific tag if it exists.
+     */
+    std::optional<value *> at_optional(const std::string& key);
+    std::optional<const value *> at_optional(const std::string& key) const;
 
     /**
      * @brief Accesses a tag by key

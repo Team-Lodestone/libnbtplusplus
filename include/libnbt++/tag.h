@@ -62,6 +62,11 @@ namespace io
     class stream_writer;
 }
 
+class NBT_EXPORT tag;
+
+template <typename T>
+concept TagLike = std::is_base_of_v<tag, T>;
+
 ///Base class for all NBT tag classes
 class NBT_EXPORT tag
 {
@@ -81,9 +86,9 @@ public:
      * @brief Returns a reference to the tag as an instance of T
      * @throw std::bad_cast if the tag is not of type T
      */
-    template<class T>
+    template<TagLike T>
     T& as();
-    template<class T>
+    template<TagLike T>
     const T& as() const;
 
     /**
@@ -140,17 +145,15 @@ NBT_EXPORT std::ostream& operator<<(std::ostream& os, tag_type tt);
  */
 NBT_EXPORT std::ostream& operator<<(std::ostream& os, const tag& t);
 
-template<class T>
+template<TagLike T>
 T& tag::as()
 {
-    static_assert(std::is_base_of<tag, T>::value, "T must be a subclass of tag");
     return dynamic_cast<T&>(*this);
 }
 
-template<class T>
+template<TagLike T>
 const T& tag::as() const
 {
-    static_assert(std::is_base_of<tag, T>::value, "T must be a subclass of tag");
     return dynamic_cast<const T&>(*this);
 }
 

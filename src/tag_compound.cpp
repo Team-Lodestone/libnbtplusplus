@@ -42,6 +42,22 @@ const value& tag_compound::at(const std::string& key) const
     return tags.at(key);
 }
 
+std::optional<value *> tag_compound::at_optional(const std::string &key) {
+    if(auto it = tags.find(key); it != tags.end()) {
+        return std::make_optional(&it->second);
+    }
+
+    return std::nullopt;
+}
+
+std::optional<const value *> tag_compound::at_optional(const std::string &key) const {
+    if(auto it = tags.find(key); it != tags.end()) {
+        return std::make_optional(&it->second);
+    }
+
+    return std::nullopt;
+}
+
 std::pair<tag_compound::iterator, bool> tag_compound::put(const std::string& key, value_initializer&& val)
 {
     auto it = tags.find(key);

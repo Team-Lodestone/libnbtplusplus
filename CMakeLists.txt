@@ -1,11 +1,13 @@
 cmake_minimum_required(VERSION 3.15)
 project(libnbt++
-    VERSION 2.3.4)
+    VERSION 2.3.5)
 
 # supported configure options
 option(NBT_BUILD_SHARED "Build shared libraries" OFF)
 option(NBT_USE_ZLIB "Build additional zlib stream functionality" ON)
 option(NBT_BUILD_TESTS "Build the unit tests. Requires CxxTest." ON)
+
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 if(NBT_NAME)
     message("Using override nbt++ name: ${NBT_NAME}")
@@ -62,7 +64,7 @@ endif()
 if(NBT_USE_ZLIB)
     target_link_libraries(${NBT_NAME} ZLIB::ZLIB)
 endif()
-set_property(TARGET ${NBT_NAME} PROPERTY CXX_STANDARD 11)
+set_property(TARGET ${NBT_NAME} PROPERTY CXX_STANDARD 20)
 generate_export_header(${NBT_NAME} BASE_NAME nbt EXPORT_FILE_NAME libnbt++/nbt_export.h)
 
 if(${BUILD_SHARED_LIBS})

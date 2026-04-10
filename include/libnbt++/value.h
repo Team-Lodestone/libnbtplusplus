@@ -92,13 +92,18 @@ public:
     tag& get() { return *tag_; }
     const tag& get() const { return *tag_; }
 
+    template<TagLike T>
+    T& get_as();
+    template<TagLike T>
+    const T& get_as() const;
+
     /**
      * @brief Returns a reference to the contained tag as an instance of T
      * @throw std::bad_cast if the tag is not of type T
      */
-    template<class T>
+    template<TagLike T>
     T& as();
-    template<class T>
+    template<TagLike T>
     const T& as() const;
 
     //Assignment of primitives and string
@@ -204,13 +209,23 @@ private:
     std::unique_ptr<tag> tag_;
 };
 
-template<class T>
+template <TagLike T>
+T & value::get_as() {
+    return this->get().as<T>();
+}
+
+template <TagLike T>
+const T & value::get_as() const {
+    return this->get().as<T>();
+}
+
+template<TagLike T>
 T& value::as()
 {
     return tag_->as<T>();
 }
 
-template<class T>
+template<TagLike T>
 const T& value::as() const
 {
     return tag_->as<T>();
