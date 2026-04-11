@@ -2,7 +2,7 @@
  *
  * @author DexrnZacAttack
  * @date 4/11/26
- * 
+ *
  * @device zPc-i2
  *
  * @license libnbt++ - A library for the Minecraft Named Binary Tag format.
@@ -27,16 +27,19 @@
 #define BUILDER_H_INCLUDED
 #include "libnbt++/tag.h"
 
-namespace nbt::builder {
-    template <nbt::TagLike TagType>
-    class tag_builder {
-    public:
-        TagType build() {
-            return std::move(m_tag);
-        }
-    protected:
-        TagType m_tag;
-    };
-}
+namespace nbt::builder
+{
+
+template <nbt::TagLike TagType>
+class tag_builder
+{
+public:
+    TagType build() { return std::move(m_tag); }
+
+protected:
+    TagType m_tag;
+};
+
+} // namespace nbt::builder
 
 #endif

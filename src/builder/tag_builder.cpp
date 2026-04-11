@@ -2,7 +2,7 @@
  *
  * @author DexrnZacAttack
  * @date 4/11/26
- * 
+ *
  * @device zPc-i2
  *
  * libnbt++ - A library for the Minecraft Named Binary Tag format.
@@ -25,5 +25,6 @@
  */
 #include "libnbt++/builder/tag_builder.h"
 
-namespace nbt::builder {
+namespace nbt::builder
+{
 }

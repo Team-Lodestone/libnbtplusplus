@@ -1,0 +1,37 @@
+---
+Checks: >
+  -*,
+  readability-identifier-naming
+CheckOptions:
+  # types
+  readability-identifier-naming.ClassCase: lower_case
+  readability-identifier-naming.EnumCase: lower_case
+  readability-identifier-naming.UnionCase: lower_case
+  # namespace
+  readability-identifier-naming.NamespaceCase: lower_case
+  # enums
+  readability-identifier-naming.EnumConstantCase: UPPER_CASE
+  readability-identifier-naming.ScopedEnumConstantCase: UPPER_CASE
+  # functions
+  readability-identifier-naming.FunctionCase: lower_case
+  # struct fields
+  readability-identifier-naming.ClassConstantCase: UPPER_CASE
+  readability-identifier-naming.ProtectedMemberCase: lower_case
+  readability-identifier-naming.PrivateMemberCase: lower_case
+  # statics
+  readability-identifier-naming.StaticVariableCase: lower_case
+  readability-identifier-naming.StaticVariablePrefix: s_
+  readability-identifier-naming.ClassMemberCase: lower_case
+  readability-identifier-naming.ClassMemberPrefix: s_
+  # constants
+  readability-identifier-naming.GlobalConstantCase: UPPER_CASE
+  # globals
+  readability-identifier-naming.GlobalVariableCase: lower_case
+  readability-identifier-naming.GlobalVariablePrefix: g_
+  # locals
+  readability-identifier-naming.LocalVariableCase: lower_case
+  readability-identifier-naming.VariableCase: lower_case
+  # params
+  readability-identifier-naming.ParameterCase: lower_case
+  # template params
+  readability-identifier-naming.TemplateParameterCase: CamelCase

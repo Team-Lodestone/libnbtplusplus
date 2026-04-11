@@ -2,7 +2,7 @@
  *
  * @author DexrnZacAttack
  * @date 4/11/26
- * 
+ *
  * @device zPc-i2
  *
  * @license libnbt++ - A library for the Minecraft Named Binary Tag format.
@@ -25,14 +25,18 @@
  */
 #ifndef COMPOUND_TAG_BUILDER_H_INCLUDED
 #define COMPOUND_TAG_BUILDER_H_INCLUDED
-#include "libnbt++/tag_compound.h"
 #include "libnbt++/builder/tag_builder.h"
+#include "libnbt++/tag_compound.h"
 
-namespace nbt::builder {
-    class compound_tag_builder : public tag_builder<tag_compound> {
-    public:
-        compound_tag_builder &put(const std::string &name, value_initializer &&value);
-    };
-}
+namespace nbt::builder
+{
+
+class compound_tag_builder : public tag_builder<tag_compound>
+{
+public:
+    compound_tag_builder &put(const std::string &name, value_initializer &&value);
+};
+
+} // namespace nbt::builder
 
 #endif // COMPOUND_TAG_BUILDER_H_INCLUDED
