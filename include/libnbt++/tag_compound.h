@@ -29,6 +29,10 @@
 namespace nbt
 {
 
+    namespace builder {
+        class compound_tag_builder;
+    }
+
 ///Tag that contains multiple unordered named tags of arbitrary types
 class NBT_EXPORT tag_compound final : public detail::crtp_tag<tag_compound>
 {
@@ -47,6 +51,9 @@ public:
 
     ///Constructs a compound with the given key-value pairs
     tag_compound(std::initializer_list<std::pair<std::string, value_initializer>> init);
+
+    ///Returns a compound builder class
+    static builder::compound_tag_builder builder();
 
     /**
      * @brief Accesses a tag by key with bounds checking

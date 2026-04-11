@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 project(libnbt++
-    VERSION 2.3.5)
+    VERSION 2.3.6)
 
 # supported configure options
 option(NBT_BUILD_SHARED "Build shared libraries" OFF)
@@ -32,7 +32,11 @@ set(NBT_SOURCES
     src/io/stream_reader.cpp
     src/io/stream_writer.cpp
 
-    src/text/json_formatter.cpp)
+    src/text/json_formatter.cpp
+
+    src/builder/compound_tag_builder.cpp
+    src/builder/tag_builder.cpp
+)
 
 set(NBT_SOURCES_Z
     src/io/izlibstream.cpp

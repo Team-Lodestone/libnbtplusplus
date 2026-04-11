@@ -18,6 +18,7 @@
  * along with libnbt++.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "libnbt++/tag_compound.h"
+#include "libnbt++/builder/compound_tag_builder.h"
 #include "libnbt++/io/stream_reader.h"
 #include "libnbt++/io/stream_writer.h"
 #include <istream>
@@ -28,8 +29,12 @@ namespace nbt
 
 tag_compound::tag_compound(std::initializer_list<std::pair<std::string, value_initializer>> init)
 {
-    for(const auto& pair: init)
-        tags.emplace(std::move(pair.first), std::move(pair.second));
+    for(const auto&[key, value]: init)
+        tags.emplace(std::move(key), std::move(value));
+}
+
+builder::compound_tag_builder tag_compound::builder() {
+    return builder::compound_tag_builder();
 }
 
 value& tag_compound::at(const std::string& key)
@@ -84,7 +89,7 @@ bool tag_compound::erase(const std::string& key)
 
 bool tag_compound::has_key(const std::string& key) const
 {
-    return tags.find(key) != tags.end();
+    return tags.contains(key);
 }
 
 bool tag_compound::has_key(const std::string& key, tag_type type) const
@@ -117,8 +122,9 @@ void tag_compound::read_payload(io::stream_reader& reader)
 
 void tag_compound::write_payload(io::stream_writer& writer) const
 {
-    for(const auto& pair: tags)
-        writer.write_tag(pair.first, pair.second);
+    for(const auto&[key, value]: tags)
+        writer.write_tag(key, value);
+
     writer.write_type(tag_type::End);
 }
 
